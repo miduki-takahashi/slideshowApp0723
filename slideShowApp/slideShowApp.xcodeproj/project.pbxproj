@@ -17,6 +17,8 @@
 		CE147DB824B833AF00A90A84 /* image3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE147DB724B833AF00A90A84 /* image3.jpeg */; };
 		CE147DBA24B833FB00A90A84 /* image1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE147DB924B833FB00A90A84 /* image1.jpeg */; };
 		CE147DBC24B8348800A90A84 /* image2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE147DBB24B8348700A90A84 /* image2.jpg */; };
+		CEDEDD0424BD5863002CB665 /* Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEDD0324BD5863002CB665 /* Controller.swift */; };
+		CEDEDD0A24BD5C29002CB665 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDEDD0924BD5C29002CB665 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		CE147DB724B833AF00A90A84 /* image3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image3.jpeg; sourceTree = "<group>"; };
 		CE147DB924B833FB00A90A84 /* image1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image1.jpeg; sourceTree = "<group>"; };
 		CE147DBB24B8348700A90A84 /* image2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image2.jpg; sourceTree = "<group>"; };
+		CEDEDD0324BD5863002CB665 /* Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Controller.swift; sourceTree = "<group>"; };
+		CEDEDD0924BD5C29002CB665 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +72,8 @@
 				CE147D9E24B8300600A90A84 /* AppDelegate.swift */,
 				CE147DA024B8300600A90A84 /* SceneDelegate.swift */,
 				CE147DA224B8300600A90A84 /* ViewController.swift */,
+				CEDEDD0924BD5C29002CB665 /* ResultViewController.swift */,
+				CEDEDD0324BD5863002CB665 /* Controller.swift */,
 				CE147DA424B8300600A90A84 /* Main.storyboard */,
 				CE147DA724B8300A00A90A84 /* Assets.xcassets */,
 				CE147DA924B8300A00A90A84 /* LaunchScreen.storyboard */,
@@ -156,9 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEDEDD0A24BD5C29002CB665 /* ResultViewController.swift in Sources */,
 				CE147DA324B8300600A90A84 /* ViewController.swift in Sources */,
 				CE147D9F24B8300600A90A84 /* AppDelegate.swift in Sources */,
 				CE147DA124B8300600A90A84 /* SceneDelegate.swift in Sources */,
+				CEDEDD0424BD5863002CB665 /* Controller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +317,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.miduki.takahashi.slideShowApp;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.miduki.takahashi.slideShowApp0715;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -327,7 +335,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.miduki.takahashi.slideShowApp;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.techacademy.miduki.takahashi.slideShowApp0715;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

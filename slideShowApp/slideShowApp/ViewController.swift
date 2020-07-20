@@ -9,10 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
     
     var displayImageNo = 0
+    var timer: Timer!
     var imageNameArray :[UIImage] = [
-         UIImage(named:"image0.jpeg")!,UIImage(named:"image1.jpeg")!,UIImage(named:"image3.jpeg")!,UIImage(named:"image4.jpeg")!]
+        UIImage(named:"image0")!,UIImage(named:"image1")!,UIImage(named:"image3")!,UIImage(named:"image4")!]
     
     @IBOutlet weak var ImageView: UIImageView!
     @IBOutlet weak var nextButton: UIButton!
@@ -20,40 +25,68 @@ class ViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     
     
+    var tapAction: UITapGestureRecognizer!
+    func unwind(_ segue: UIStoryboard){
+        
+    }
+    @IBAction func tapImage(_ sender: Any) {
+        performSegue(withIdentifier: "result", sender: nil)
+    }
+    
     //タップした場合
     @IBAction func nextButtonTap(_ sender: Any){
         displayImageNo += 1
+        if (displayImageNo == imageNameArray.count){
+            displayImageNo = 0
+        }
         ImageView.image = imageNameArray[displayImageNo]
+        
     }
-    let displayImage = "String!"
+    
     
     @IBAction func switchButtonTap(_ sender: Any){
+        
+        if (self.timer == nil)
+        {self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+            
+            
+            backButton.isEnabled = false//ボタン押せない
+            nextButton.isEnabled = false//ボタン押せない
+            switchButton.setTitle("停止",for : .normal)
+        } else {
+            self.timer.invalidate()//タイマー停止
+            self.timer = nil
+            backButton.isEnabled = true//ボタン押せる
+            nextButton.isEnabled = true//ボタン押せる
+            switchButton.setTitle("再生",for : .normal)
+        }
+    }
+    
+    
+    
+    @objc func updateTimer(_ timer: Timer) {
+        displayImageNo += 1
+        if (displayImageNo == imageNameArray.count){
+            displayImageNo = 0
+            
+        }
+        ImageView.image = imageNameArray[displayImageNo]
     }
     
     @IBAction func backButtonTap(_ sender: Any){
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        let image = UIImage(named:"image0.jpeg")
-        // Do any additional setup after loading the view.
-        
-        var displayImageNo = 0
-        
-        let imageNameArray = ["image0.jpeg","image1.jpeg","image2.jpg","image3.jpeg","image4.jpeg"]
-        
-        func displayImage () {
-            
-            let name = imageNameArray[displayImageNo]
-            
-           
-            
-            
+        displayImageNo -= 1
+        if (displayImageNo == -1){
+            displayImageNo = imageNameArray.count-1
         }
+        ImageView.image = imageNameArray[displayImageNo]
         
     }
-    
-    
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           // segueから遷移先のResultViewControllerを取得する
+           let resultViewController:ResultViewController = segue.destination as! ResultViewController
+           // 遷移先のResultViewControllerで宣言しているx, yに値を代入して渡す
+           resultViewController.Image = imageNameArray[displayImageNo]
+         
+       }
 }
+
