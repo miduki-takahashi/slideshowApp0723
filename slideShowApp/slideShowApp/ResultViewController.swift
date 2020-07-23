@@ -17,8 +17,8 @@ class ResultViewController: UIViewController
     @IBOutlet weak var backButton: UIButton!
   
     override func viewDidLoad() {
-        ImageView.image = Image 
         super.viewDidLoad()
+        ImageView.image = Image 
         
     }
       

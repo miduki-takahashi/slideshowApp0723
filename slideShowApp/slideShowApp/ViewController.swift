@@ -24,13 +24,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var switchButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
-    
     var tapAction: UITapGestureRecognizer!
     func unwind(_ segue: UIStoryboard){
         
     }
     @IBAction func tapImage(_ sender: Any) {
-        performSegue(withIdentifier: "result", sender: nil)
+        if (self.timer != nil){
+            return
+        }else{
+            performSegue(withIdentifier: "result", sender: nil)}
     }
     
     //タップした場合
@@ -42,16 +44,14 @@ class ViewController: UIViewController {
         ImageView.image = imageNameArray[displayImageNo]
         
     }
-    
-    
+
     @IBAction func switchButtonTap(_ sender: Any){
         
         if (self.timer == nil)
         {self.timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
-            
-            
             backButton.isEnabled = false//ボタン押せない
             nextButton.isEnabled = false//ボタン押せない
+            
             switchButton.setTitle("停止",for : .normal)
         } else {
             self.timer.invalidate()//タイマー停止
@@ -61,8 +61,6 @@ class ViewController: UIViewController {
             switchButton.setTitle("再生",for : .normal)
         }
     }
-    
-    
     
     @objc func updateTimer(_ timer: Timer) {
         displayImageNo += 1
@@ -82,11 +80,11 @@ class ViewController: UIViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           // segueから遷移先のResultViewControllerを取得する
-           let resultViewController:ResultViewController = segue.destination as! ResultViewController
-           // 遷移先のResultViewControllerで宣言しているx, yに値を代入して渡す
-           resultViewController.Image = imageNameArray[displayImageNo]
-         
-       }
+        
+        // segueから遷移先のResultViewControllerを取得する
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
+        resultViewController.Image = imageNameArray[displayImageNo]}
+
 }
+
 

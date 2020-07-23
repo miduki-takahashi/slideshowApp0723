@@ -19,9 +19,10 @@
                                 <rect key="frame" x="30" y="595" width="354" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVO-yt-BPC">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="168" height="30"/>
                                         <rect key="contentStretch" x="0.14999999999999999" y="0.0" width="1" height="1"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <inset key="contentEdgeInsets" minX="-26" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="進む">
                                             <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -30,9 +31,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygf-co-P10">
-                                        <rect key="frame" x="229" y="0.0" width="31" height="30"/>
+                                        <rect key="frame" x="231" y="0.0" width="30" height="30"/>
                                         <rect key="contentStretch" x="0.14999999999999999" y="0.0" width="1" height="1"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="再生">
                                             <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -41,9 +43,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpm-kG-Vtp">
-                                        <rect key="frame" x="323" y="0.0" width="31" height="30"/>
+                                        <rect key="frame" x="324" y="0.0" width="30" height="30"/>
                                         <rect key="contentStretch" x="0.14999999999999999" y="0.0" width="1" height="1"/>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <inset key="contentEdgeInsets" minX="-1" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="戻る">
                                             <color key="titleShadowColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -59,6 +62,9 @@
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image0.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="4xr-Ze-5MW">
                                 <rect key="frame" x="80" y="111" width="254" height="284"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="hND-8w-qdv" appends="YES" id="PjL-FL-siQ"/>
+                                </connections>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" cyan="0.014875856164383562" magenta="0.16858411815068494" yellow="0.0" black="0.041596283783783786" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -83,9 +89,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="vXp-Yy-ThI">
+                <tapGestureRecognizer id="hND-8w-qdv">
                     <connections>
-                        <action selector="tapImage:" destination="BYZ-38-t0r" id="hnh-mm-UuN"/>
+                        <segue destination="Iih-wN-cdH" kind="show" id="avH-4o-nJV"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -96,7 +102,7 @@
             <objects>
                 <viewController id="Iih-wN-cdH" customClass="ResultViewController" customModule="slideShowApp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="J7i-Ef-c3q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rHR-D6-lBb">
@@ -121,6 +127,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="xbh-wD-ei1"/>
                     <connections>
+                        <outlet property="ImageView" destination="rHR-D6-lBb" id="S2y-Zd-Jzb"/>
                         <outlet property="backButton" destination="1ff-Rl-06H" id="KCm-Af-w5L"/>
                     </connections>
                 </viewController>
